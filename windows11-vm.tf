@@ -12,14 +12,14 @@ resource "azurerm_network_interface" "win10nic" {
 }
 
 resource "azurerm_windows_virtual_machine" "windows10-vm" {
-  name                = "windows10-vm"
+  name                = "windows11-vm"
   resource_group_name = azurerm_resource_group.myterraformgroup.name
   location            = var.location
   size                = "Standard_F2"
   admin_username      = "azureadmin"
   admin_password      = "Fortinet123#"
   network_interface_ids = [
-    azurerm_network_interface.win10nic.id,
+    azurerm_network_interface.win11nic.id,
   ]
 
   os_disk {
@@ -29,8 +29,8 @@ resource "azurerm_windows_virtual_machine" "windows10-vm" {
 
   source_image_reference {
     publisher = "MicrosoftWindowsDesktop"
-    offer     = "Windows-10"
-    sku       = "20h1-pro"
+    offer     = "windows-11"
+    sku       = "win11-22h2-pro"
     version   = "latest"
   }
 }
