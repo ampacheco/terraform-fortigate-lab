@@ -69,7 +69,8 @@ variable "adminusername" {
 
 variable "adminpassword" {
   type    = string
-  default = "Fortinet123#"
+  # use your own password
+  default = "[Change-Me]"
 }
 
 variable "location" {
