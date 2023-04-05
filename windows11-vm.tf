@@ -11,13 +11,13 @@ resource "azurerm_network_interface" "win11nic" {
   }
 }
 
-resource "azurerm_windows_virtual_machine" "windows10-vm" {
+resource "azurerm_windows_virtual_machine" "windows11-vm" {
   name                = "windows11-vm"
   resource_group_name = azurerm_resource_group.myterraformgroup.name
   location            = var.location
-  size                = "Standard_F2"
+  size                = "Standard_F2s_v2"
   admin_username      = "azureadmin"
-  admin_password      = "Fortinet123#"
+  admin_password      = var.adminpassword
   network_interface_ids = [
     azurerm_network_interface.win11nic.id,
   ]
