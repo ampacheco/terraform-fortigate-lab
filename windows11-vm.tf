@@ -1,5 +1,5 @@
 resource "azurerm_network_interface" "win11nic" {
-  name                = "nic-windows10-vm"
+  name                = "nic-windows11-vm"
   location            = var.location
   resource_group_name = azurerm_resource_group.myterraformgroup.name
 
